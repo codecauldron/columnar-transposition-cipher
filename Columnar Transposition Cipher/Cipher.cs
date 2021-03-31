@@ -12,7 +12,7 @@ namespace ColumnarTranspositionCipher
         protected const int Row = 0;
         protected const int Column = 1;
 
-        protected char[,] Grid { get; init; }
+        protected char[,] Grid { get; set; }
         protected string Key { get; }
 
         protected Cipher(string key)
