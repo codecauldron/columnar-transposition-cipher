@@ -7,13 +7,6 @@ namespace ColumnarTranspositionCipher
     {
         public Decipher(string encryptedText, string key) : base(key)
         {
-            if (!IsKeyValid())
-            {
-                throw new ArgumentException(
-                    $"{Key} is not a valid key. The key must be at least 2 characters, only use alphanumeric " +
-                    $"characters, and can't contain duplicate characters.");
-            }
-
             if (encryptedText.Length % Key.Length > 0)
             {
                 throw new ArgumentException($"The key '{Key}' has an unexpected length.");

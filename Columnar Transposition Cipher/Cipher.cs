@@ -11,16 +11,22 @@ namespace ColumnarTranspositionCipher
         private const int CHAR_Z = 90;
         protected const int Row = 0;
         protected const int Column = 1;
-        
+
         protected char[,] Grid { get; init; }
         protected string Key { get; }
 
         protected Cipher(string key)
         {
             Key = key.Trim().ToUpper();
+            if (!IsKeyValid())
+            {
+                throw new ArgumentException(
+                    $"{Key} is not a valid key. The key must be at least 2 characters, only use alphanumeric " +
+                    "characters, and can't contain duplicate characters.");
+            }
         }
 
-        internal bool IsKeyValid()
+        private bool IsKeyValid()
         {
             return !(
                        from c in Key

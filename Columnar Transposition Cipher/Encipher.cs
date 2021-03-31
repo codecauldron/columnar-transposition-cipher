@@ -7,13 +7,6 @@ namespace ColumnarTranspositionCipher
     {
         public Encipher(string clearText, string key) : base(key)
         {
-            if (!IsKeyValid())
-            {
-                throw new ArgumentException(
-                    $"{Key} is not a valid key. The key must be at least 2 characters, only use alphanumeric " +
-                    $"characters, and can't contain duplicate characters.");
-            }
-
             int rows = clearText.Length / Key.Length + (clearText.Length % Key.Length > 0 ? 1 : 0);
 
             Grid = new char[rows, Key.Length];

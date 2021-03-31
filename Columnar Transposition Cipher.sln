@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Columnar Transposition Cipher", "Columnar Transposition Cipher\Columnar Transposition Cipher.csproj", "{907A6E14-F8FF-4A21-ACEB-62B887E7C258}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{0D2F4EB2-C3BD-4D4C-B739-E97748178F80}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{907A6E14-F8FF-4A21-ACEB-62B887E7C258}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{907A6E14-F8FF-4A21-ACEB-62B887E7C258}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{907A6E14-F8FF-4A21-ACEB-62B887E7C258}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D2F4EB2-C3BD-4D4C-B739-E97748178F80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D2F4EB2-C3BD-4D4C-B739-E97748178F80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D2F4EB2-C3BD-4D4C-B739-E97748178F80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D2F4EB2-C3BD-4D4C-B739-E97748178F80}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
