@@ -3,7 +3,7 @@
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>net5.0</TargetFramework>
-        <RootNamespace>Columnar_Transpositional_Cipher</RootNamespace>
+        <RootNamespace>ColumnarTranspositionalCipher</RootNamespace>
     </PropertyGroup>
 
 </Project>
