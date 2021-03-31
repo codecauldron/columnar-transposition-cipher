@@ -1,13 +1,12 @@
 using System;
 using System.Linq;
 
-namespace Columnar_Transposition_Cipher
+namespace ColumnarTranspositionCipher
 {
     public class Decipher : Cipher
     {
-        public Decipher(string encryptedText, string key)
+        public Decipher(string encryptedText, string key) : base(key)
         {
-            Key = key.ToUpper().Trim();
             if (!IsKeyValid())
             {
                 throw new ArgumentException(

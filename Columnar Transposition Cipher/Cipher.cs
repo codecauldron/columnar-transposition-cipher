@@ -2,23 +2,27 @@ using System;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace Columnar_Transposition_Cipher
+namespace ColumnarTranspositionCipher
 {
     public abstract class Cipher
     {
-        private const string VALID_KEY_CHARACTERS = "^[A-Z0-9]+$";
-        internal const int Row = 0;
-        internal const int Column = 1;
+        private const string VALID_KEY_CHARACTERS = "^[A-Z0-9]{2,}$";
         private const int CHAR_A = 65;
         private const int CHAR_Z = 90;
+        protected const int Row = 0;
+        protected const int Column = 1;
+        
         protected char[,] Grid { get; init; }
-        protected string Key { get; init; }
+        protected string Key { get; }
 
+        protected Cipher(string key)
+        {
+            Key = key.Trim().ToUpper();
+        }
 
         internal bool IsKeyValid()
         {
-            return Key.Length > 1 &&
-                   !(
+            return !(
                        from c in Key
                        group c by c
                        into grp
@@ -28,14 +32,16 @@ namespace Columnar_Transposition_Cipher
                    Regex.IsMatch(Key, VALID_KEY_CHARACTERS);
         }
 
-
         internal char GetChar(string text, int stringPosition)
         {
-            return stringPosition >= text.Length
-                ? (char) new Random().Next(CHAR_A, CHAR_Z + 1)
-                : text[stringPosition];
+            if (stringPosition >= text.Length)
+            {
+                return (char) new Random().Next(CHAR_A, CHAR_Z + 1);
+            }
+
+            return text[stringPosition];
         }
-        
+
         internal string GetColumnText(int column)
         {
             string columnText = "";
@@ -46,7 +52,7 @@ namespace Columnar_Transposition_Cipher
 
             return columnText;
         }
-        
+
         public void PrintGrid(bool printHeader = false)
         {
             if (printHeader)

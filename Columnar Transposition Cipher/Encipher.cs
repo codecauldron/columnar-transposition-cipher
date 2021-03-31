@@ -1,13 +1,12 @@
 using System;
 using System.Linq;
 
-namespace Columnar_Transposition_Cipher
+namespace ColumnarTranspositionCipher
 {
     public class Encipher : Cipher
     {
-        public Encipher(string clearText, string key)
+        public Encipher(string clearText, string key) : base(key)
         {
-            Key = key.ToUpper().Trim();
             if (!IsKeyValid())
             {
                 throw new ArgumentException(
@@ -24,7 +23,7 @@ namespace Columnar_Transposition_Cipher
         public string DoCipher()
         {
             string cipheredText = "";
-            string sortedKey = String.Concat(Key.OrderBy(c => c));
+            string sortedKey = string.Concat(Key.OrderBy(c => c));
             foreach (var ch in sortedKey)
             {
                 int column = Key.IndexOf(ch);
@@ -34,8 +33,6 @@ namespace Columnar_Transposition_Cipher
             return cipheredText;
         }
 
-
-        
         private void FillGrid(string text)
         {
             int stringPosition = 0;

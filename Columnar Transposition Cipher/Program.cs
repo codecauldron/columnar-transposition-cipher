@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Columnar_Transposition_Cipher
+namespace ColumnarTranspositionCipher
 {
     internal static class Program
     {
